@@ -1,0 +1,48 @@
+<html>
+    <body bgcolor = "#FFFDD0">
+        <form action = "FormHandling.html" method = "get">
+            First name: <input type = "text" name = "firstname"/><br><br>
+            Last name: <input type = "text" name = "lastname"/>
+            <input type = "submit" value = "Submit" autofocus>
+            <input type = "image" name = "image button" src = "C:\xampp\htdocs\pixel.jpeg" />
+        </form>r
+
+        <form>
+            <fieldset>
+            <select>
+                <optgroup label = "STEM ">
+                    <option value = "Computer Science"> Computer Science</option>
+                    <option value = "IT">Information Technology</option>
+                    <option value = "Engineering">Engineering</option>
+                </optgroup>
+                <optgroup label = "Health Sciences">
+                    <option value = "Biology" >Molecular Biology</option>
+                    <option value = "Pharmacy">Phamarcy</option>
+                </optgroup>
+            </select>
+            <form action="/submit-form" method="post" enctype="multipart/form-data">
+  <input type="file" name="myFile">
+  <input type="file" name="userName">
+  <button type="file">Upload & Submit</button>
+            </fieldset>
+        </form>
+ Name: <input type="text" name="name" value="<?php echo $name;?>">
+
+E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+
+Website: <input type="text" name="website" value="<?php echo $website;?>">
+
+Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+Gender:
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="female") echo "checked";?>
+value="female">Female
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="male") echo "checked";?>
+value="male">Male
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="other") echo "checked";?>
+value="other">Other
+        </form>
+    </body>
+</html>

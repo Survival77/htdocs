@@ -1,0 +1,14 @@
+# Ignore XAMPP/MariaDB binaries and executables
+/bin/
+
+# Ignore typical OS noise
+.DS_Store
+Thumbs.db
+
+# Ignore PHPStorm/VSCode configs (optional)
+.idea/
+.vscode/
+
+# Keep uploads folder but ignore its contents except .gitkeep
+Tutorials/uploads/*
+!Tutorials/uploads/.gitkeep

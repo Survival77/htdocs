@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Result</title>
+  <style>
+    body { font-family: Arial,  sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 1rem; }
+    table { border-collapse: collapse; width: 100%; max-width: 640px; }
+    th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; }
+    th { background: #f6f6f6; }
+    .empty { color: #666; }
+    .actions { margin-top: 1rem; }
+    .actions a { margin-right: 1rem; }
+  </style>
+</head>
+<body bg color = "#f6f6f6">
+  <h1>Form Submission Result</h1>
+  <div id="content" class="empty">Loading…</div>
+  <div class="actions">
+    <a href="FormHandling.html">Homepage</a>
+  </div>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const container = document.getElementById('content');
+
+      if (!params || !params.toString()) {
+        container.textContent = 'No query parameters found. Submit the form using method="get" to see values here.';
+        return;
+      }
+
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+
+      thead.innerHTML = '<tr><th>Field</th><th>Value</th></tr>';
+
+      // List all keys/values
+      for (const [key, value] of params.entries()) {
+        const tr = document.createElement('tr');
+        const tdKey = document.createElement('td');
+        const tdVal = document.createElement('td');
+        tdKey.textContent = key;
+        tdVal.textContent = value;
+        tr.appendChild(tdKey);
+        tr.appendChild(tdVal);
+        tbody.appendChild(tr);
+      }
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      container.classList.remove('empty');
+      container.innerHTML = '';
+      container.appendChild(table);
+    })();
+  </script>
+</body>
+</html>

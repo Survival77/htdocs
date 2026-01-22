@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sample PHP Table</title>
+</head>
+<body style="background:#C0C0C0;">
+
+<?php
+// Print a simple table of numbers 0..5 with alternating row colors
+echo '<table width="100" border="1" cellspacing="0" cellpadding="4">';
+for ($i = 0; $i <= 5; $i++) {
+    if ($i % 2 == 0) {
+        echo '<tr><td style="background:pink;">' . $i . '</td></tr>';
+    } else {
+        echo '<tr><td style="background:green;">' . $i . '</td></tr>';
+    }
+}
+echo '</table>';
+?>
+
+</body>
+</html>
